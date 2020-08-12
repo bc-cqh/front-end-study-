@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<script src="js/jquery-1.11.1/jquery.js"></script>
+		<link rel="stylesheet" href="js/jquery.mobile-1.4.5/jquery.mobile-1.4.5.css" />
+		<script src="js/jquery.mobile-1.4.5/jquery.mobile-1.4.5.js"></script>
+		<title>诗词详情</title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			html,
+			body {
+				height: 100%
+			}
+			#biaoti{
+				width: 100%;
+				text-align: center;
+				margin-bottom: 5%;
+			}
+			#id1{
+				padding-top: 2%;
+				font-weight: bolder;
+			}
+			#id2{
+				padding-top: 5%;
+				font-family: "Helvetica";
+				color: gray;
+			}
+			#id3{
+				padding-top: 5%;
+				line-height: 150%;
+				font-family: "KAITI";
+				font-size: 18px;
+				padding-left: 10px;
+			}
+			.a{
+				width: 100%;
+				height: 10px;
+				background-color: #F6EBCD;
+			}
+			.b{
+				width: 100%;
+				height: 30px;
+			}
+			.c{
+				list-style: none;
+				width: 100%;
+			}
+			.c li{
+				width: 33.33%;
+				float: left;
+				line-height: 30px;
+				text-align: center;
+			}
+			#l1{
+				color: red;
+				border-bottom: 1px solid red;
+			}
+			.c li:hover{
+				color: red;
+				border-bottom: 1px solid red;
+			}
+			.kk{
+				padding-left: 2%;
+				font-family: "KAITI";
+				line-height: 150%;
+			}
+			#gg{
+				position: absolute;
+				top: 0;
+				left: 2%;
+			}
+		</style>
+	</head>
+
+	<body>
+		<a href="#" data-rel="back" id="gg" class="ui-btn ui-corner-all ui-icon-carat-l ui-btn-icon-notext">返回</a>
+		<div>
+			<img src="img/诗人头像/VCG211269676066.jpg" width="100%"/>
+		</div>
+		<div id="biaoti">
+			<h3 id="id1">观沧海</h3>
+			<img id="play" src="img/播放.png" width="20"/>
+			<audio id="audio" style="display: none; cursor:pointer;outline:none; float:left; margin-left:20px; width:80%;height: 54px;" src="audio/观沧海.mp3" controls="controls"></audio>
+			<p id="id2">两汉·曹操</p>
+			<p id="id3">
+				东临碣石，以观沧海。
+				<br>
+				水何澹澹，山岛竦峙。
+				<br>					
+				树木丛生，百草丰茂。
+				<br>					
+				秋风萧瑟，洪波涌起。
+				<br>
+				日月之行，若出其中。
+				<br>					
+				星汉灿烂，若出其里。
+				<br>
+				幸甚至哉，歌以咏志。
+			</p>
+		</div>
+		<div class="a"></div>
+		<div class="b">
+			<ul class="c">
+				<li id="l1">翻译</li>
+				<li id="l2">鉴赏</li>
+				<li id="l3">作者</li>
+			</ul>
+		</div>
+		<div class="a"></div>
+		<div class="kk" id="k1">
+			<h3>译文及注释</h3>
+			<h4>译文：</h4>
+			<p>东行登上高高的碣石山，来观赏苍茫的大海。</p>
+			<p>海水多么宽阔浩荡，海中山岛罗列，高耸挺立。</p>
+			<p>周围树木葱茏，花草丰茂。</p>
+			<p>萧瑟的风声传来，草木动摇，海中翻涌着巨大的海浪。</p>
+			<p>太阳和月亮升起降落，好像是从这浩瀚的海洋中发出的。</p>
+			<p>银河里的灿烂群星，也好像是从大海的怀抱里涌现出来的。</p>
+			<p>啊，庆幸得很！就用诗歌来表达内心的志向吧。</p>
+			<br />
+			<h4>注释：</h4>
+			<p>临：登上，有游览的意思。</p>
+			<p>碣（jié）石：山名。碣石山，河北昌黎碣石山。公元207年秋天，曹操征乌桓得胜回师时经过此地。</p>
+			<p>沧：通“苍”，青绿色。</p>
+			<p>海：渤海</p>
+			<p>何：多么</p>
+			<p>澹澹（dàn dàn）：水波摇动的样子。</p>
+			<p>竦峙（sǒng zhì）：耸立。竦 ，通耸，高。</p>
+			<p>萧瑟：树木被秋风吹的声音。</p>
+			<p>洪波：汹涌澎湃的波浪</p>
+			<p>日月：太阳和月亮</p>
+			<p>若：如同.好像是.</p>
+		</div>
+		<div class="kk" id="k2">
+			<h3>鉴赏：</h3>
+			<p>
+			《观沧海》是借景抒情，把眼前的海上景色和自己的雄心壮志很巧妙地融合在一起。
+				从诗的体裁看，这是一首古体诗；从表达方式看，这是一首四言写景诗。
+				“东临碣石，以观沧海”这两句话点明“观沧海”的位置：
+				诗人登上碣石山顶，居高临海，视野寥廓，大海的壮阔景象尽收眼底。
+				以下十句描写，概由此拓展而来。
+				“观”字起到统领全篇的作用，体现了这首诗意境开阔，气势雄浑的特点。
+				<br/>
+		    《观沧海》的高潮放在诗的末尾，它的感情非常奔放，思想却很含蓄。
+			不但做到了情景交融，而且做到了情理结合、寓情于景。
+			因为它含蓄，所以更有启发性，更能激发我们的想像，更耐人寻味。
+			过去人们称赞曹操的诗深沉饱满、雄健有力，
+			“如幽燕老将，气韵沉雄”，从这里可以得到印证。
+			全诗的基调为苍凉慷慨的，这也是建安风骨的代表作。
+			</p>
+		</div>
+		<div class="kk" id="k3">
+			<img src="img/诗人头像/caocao.jpg"  height="130"/>
+			<h3>作者介绍：</h3>
+			<p>
+				曹操（155年－220年正月庚子），字孟德，一名吉利，小字阿瞒，沛国谯（今安徽亳州）人，汉族。东汉末年杰出的政治家、军事家、文学家、书法家。三国中曹魏政权的缔造者，其子曹丕称帝后，追尊为武皇帝，庙号太祖。曹操精兵法，善诗歌，抒发自己的政治抱负，并反映汉末人民的苦难生活，气魄雄伟，慷慨悲凉；散文亦清峻整洁，开启并繁荣了建安文学，给后人留下了宝贵的精神财富，史称建安风骨，鲁迅评价其为“改造文章的祖师”。同时曹操也擅长书法，尤工章草，唐朝张怀瓘在《书断》中评其为“妙品”。
+			</p>
+		</div>
+	</body>
+	<script>
+		$("#k1").show();
+		$("#k2").hide();
+		$("#k3").hide();
+		$("#l1").click(function(){
+			$("#l1").css("color","red");
+			$("#l1").css("border-bottom","1px solid red");
+			$("#k1").show();
+			$("#k2").hide();
+			$("#k3").hide();
+		});
+		$("#l2").click(function(){
+			$("#l1").css("color","black");
+			$("#l1").css("border-bottom",'none');
+			$("#k1").hide();
+			$("#k2").show();
+			$("#k3").hide();
+		});
+		$("#l3").click(function(){
+			$("#l1").css("color","black");
+			$("#l1").css("border-bottom",'none');
+			$("#k1").hide();
+			$("#k2").hide();
+			$("#k3").show();
+		});
+		
+		$("#play").click(function(){
+			var audio = document.getElementById("audio");
+			if(audio.paused){
+				audio.play();
+				$("#play").attr("src","img/播放1.png");
+			}else{
+				audio.pause();
+				$("#play").attr("src","img/播放.png");
+			}
+		});
+	</script>
+</html>

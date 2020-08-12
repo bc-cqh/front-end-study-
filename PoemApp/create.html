@@ -1,0 +1,158 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" href="js/jquery.mobile-1.4.5/jquery.mobile-1.4.5.css" />
+		<script src="js/jquery-1.11.1/jquery.js"></script>
+		<script src="js/jquery.mobile-1.4.5/jquery.mobile-1.4.5.js"></script>
+		<style type="text/css">
+			#content {
+				height: 150px !important;
+			}
+
+			#photo {
+				width: 50%;
+				height: 130px;
+				text-align: center;
+				border-style: dashed;
+				border-color: gray;
+			}
+
+			#photo img {
+				transform: translateY(50%);
+			}
+
+			.file {
+				margin-top: 10px;
+				position: relative;
+				display: inline-block;
+				background: #D0EEFF;
+				border: 1px solid #99D3F5;
+				border-radius: 4px;
+				padding: 4px 12px;
+				overflow: hidden;
+				color: #1E88C7;
+				text-decoration: none;
+				text-indent: 0;
+				line-height: 20px;
+			}
+
+			.file input {
+				position: absolute;
+				font-size: 100px;
+				right: 0;
+				top: 0;
+				opacity: 0;
+			}
+
+			.file:hover {
+				background: #AADFFD;
+				border-color: #78C3F3;
+				color: #004974;
+				text-decoration: none;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div data-role="page">
+			<div data-role="header">
+				<a href="#" class="ui-btn" data-rel="back">返回</a>
+				<h1>原创创作</h1>
+				<a href="#" data-ajax="false" id="submit">提交</a>
+			</div>
+			<div data-role="main" class="ui-content">
+				<input type="text" name="title" id="title" placeholder="标题" />
+				<textarea name="content" id="content" placeholder="文字"></textarea>
+				<div id="photo">
+					<img id="img0" src="img/icon/加号.png" width="50%" height="50%" style="vertical-align: middle;" />
+				</div>
+				<a href="javascript:;" class="file">选择文件
+					<input type="file" name="upload" id="upload" data-role="none" onchange="setBlogrollImageName(this)">
+				</a>
+
+			</div>
+		</div>
+		<script>
+			//日期格式转换yyyy-MM-dd HH:MM:SS
+			function getNowFormatDate() {
+			    var date = new Date();
+			    var seperator1 = "-";
+			    var seperator2 = ":";
+			    var month = date.getMonth() + 1;
+			    var strDate = date.getDate();
+			    if (month >= 1 && month <= 9) {
+			        month = "0" + month;
+			    }
+			    if (strDate >= 0 && strDate <= 9) {
+			        strDate = "0" + strDate;
+			    }
+			    var currentdate = date.getFullYear() + seperator1 + month + seperator1 + strDate
+			            + " " + date.getHours() + seperator2 + date.getMinutes()
+			            + seperator2 + date.getSeconds();
+			    return currentdate;
+			}
+			
+			$("#submit").click(function() {
+				var a = $("#title").val();
+				var b = $("#content").val();
+				var c = getNowFormatDate();
+				if(a==null||a==''){
+					alert("请输入标题");
+				}else if(b == null || b==''){
+					alert("请输入文字");
+				}else{
+					var title = [];
+					var content = [];
+					var time = [];
+					var title1 = JSON.parse(localStorage.getItem("title"));
+					var content1 = JSON.parse(localStorage.getItem("content"));
+					var time1 = JSON.parse(localStorage.getItem("time"));
+					title = title1;
+					content = content1;	
+					time = time1;
+					if( title==null || content == null || time == null){
+						title = [];
+						content = [];
+						time= [];
+					}
+					title.splice(0,0,a);
+					content.splice(0,0,b);
+					time.splice(0,0,c);
+					localStorage.setItem('title',JSON.stringify(title));
+					localStorage.setItem('content',JSON.stringify(content));
+					localStorage.setItem('time',JSON.stringify(time));
+					window.location.href = "PoetryCircle.html";
+				}
+			});
+
+			//实现图片预览
+			$("#upload").change(function() {
+				var objUrl = getObjectURL(this.files[0]); //获取文件信息
+				console.log(objUrl);
+				if (objUrl) {
+					$("#img0").attr("src", objUrl);
+					$("#img0").css("width", "100%");
+					$("#img0").css("height", "100%");
+					$("#img0").css("transform", "translateY(0)");
+				}
+			});
+
+			function getObjectURL(file) {
+				var url = null;
+				if (window.createObjectURL != undefined) {
+					url = window.createObjectURL(file);
+				} else if (window.URL != undefined) { // mozilla(firefox)
+					url = window.URL.createObjectURL(file);
+				} else if (window.webkitURL != undefined) { // webkit or chrome
+					url = window.webkitURL.createObjectURL(file);
+				}
+				return url;
+			}
+		</script>
+	</body>
+
+</html>

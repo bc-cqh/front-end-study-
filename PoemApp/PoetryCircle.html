@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>诗友圈</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="js/jquery.mobile-1.4.5/jquery.mobile-1.4.5.css" />
+		<link href="https://cdn.bootcss.com/Swiper/4.0.6/css/swiper.min.css" rel="stylesheet">
+		<script src="js/jquery-1.11.1/jquery.js"></script>
+		<script src="js/jquery.mobile-1.4.5/jquery.mobile-1.4.5.js"></script>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+				border: none;
+				touch-action: none;
+			}
+
+			a {
+				text-decoration: none;
+			}
+
+			.header {
+				width: 100%;
+				height: 50px;
+			}
+
+			.home {
+				width: 10%;
+				float: left;
+			}
+
+			.title {
+				height: 50px;
+				line-height: 50px;
+				float: left;
+				width: 40%;
+				margin-left: 20%;
+				text-align: center;
+				font-size: 20px;
+			}
+
+			.create {
+				width: 10%;
+				float: right;
+				margin-top: 10px;
+			}
+
+			.swiper-slide {
+				width: auto !important;
+			}
+
+			.tabScroll {
+				height: 35px;
+				background-color: white;
+				border-bottom: 1px solid #CCCCCC;
+				padding: 0 10px;
+				line-height: 35px;
+				font-family: "微软雅黑"
+			}
+
+			#yuanchuang {
+				/* background-color: #3388cc; */
+				color: red;
+				border-bottom: 1.5px solid red;
+			}
+
+			.content {
+				border-top: 1px solid gray;
+			}
+
+			.top {
+				margin-top: 10px;
+				width: 100%;
+				float: left;
+			}
+
+			.user {
+				float: left;
+			}
+
+			.name {
+				margin-left: 10px;
+				float: left;
+			}
+
+			.username {
+				font-size: 15px;
+			}
+
+			.time {
+				font-size: 10px;
+				line-height: 20px;
+			}
+
+			.contson {
+				margin-top: 5px;
+				line-height: 25px;
+			}
+
+			.img {
+				margin-top: 10px;
+			}
+
+			.img img {
+				width: 100%;
+
+			}
+
+			.tools {
+				margin-top: 5px;
+				height: 33px;
+			}
+
+			.tools .shoucang {
+				float: left;
+			}
+
+			.tools .pinglun {
+				float: left;
+				margin-left: 20px;
+			}
+
+			.tools .guanzhu {
+				margin-left: 20px;
+				float: left;
+			}
+			.ak{
+				background-color: lightblue;
+				width: 80px;
+				height: 30px;
+				border-radius: 15%;
+			}
+			.sk{
+				width: 100%;
+				background-color: lightblue;
+				height: 70px;
+				margin-top: 5%;
+				line-height: 200%;
+			}
+			.gg{
+				width: 50%;
+				float: left;
+				text-align: center;
+				color: black;
+			}
+			.yy{
+				width: 50%;
+				float: right;
+				text-align: center;
+				color: black;
+			}
+			.un{
+				color: red;
+				font-weight: bolder;
+			}
+		</style>
+	</head>
+	<body>
+		<div data-role="page">
+			<div data-role="header">
+				<div class="header">
+					<div class="home">
+						<a href="home.html" data-ajax="false">
+							<img src="img/icon/主页.png" width="40" height="40" />
+						</a>
+					</div>
+					<div class="title">
+						<a href="#" style="color: red;" id="q1">创作</a>
+						<span>|</span>
+						<a href="#" style="color: black;" id="q2">已关注</a>
+					</div>
+					<div class="create">
+						<a href="create.html" data-ajax="false" data-transition="slide">
+							<img src="img/icon/创作.png" width="25" height="25" />
+						</a>
+					</div>
+				</div>
+			</div>
+			<!-- Swiper -->
+			<div class="tabScroll">
+				<div class="swiper-container">
+					<div class="swiper-wrapper">
+						<span class="swiper-slide" id="yuanchuang">原创</span>
+						<span class="swiper-slide te">日常</span>
+						<span class="swiper-slide te">书法</span>
+						<span class="swiper-slide te">名句</span>
+						<span class="swiper-slide te">搞笑</span>
+						<span class="swiper-slide te">画画</span>
+						<span class="swiper-slide te">音乐</span>
+					</div>
+				</div>
+			</div>
+			<div data-role="main" class="ui-content" id="ppp">
+				<div class="content">
+					<div class="top">
+						<div class="user">
+							<img src="img/视觉中国用户头像/VCG41656172199.jpg" width="30" height="30" style="border-radius: 50%;" />
+						</div>
+						<div class="name">
+							<p class="username">清秋云韵归</p>
+							<p class="time">2020/6/4 20:08</p>
+						</div>
+					</div>
+					<div class="kk">
+						<h4>月夜望山</h4>
+						<div class="contson">
+							<p>
+								南京久客耕南亩，北望伤神坐北窗。
+								昼引老妻乘小艇，晴看稚子浴清江。
+							</p>
+						</div>
+					</div>
+					<div class="img">
+						<img src="img/视觉中国风景图/VCG211113932137.jpg" />
+					</div>
+					<div class="tools">
+						<div class="shoucang">
+							<img src="img/收藏.png" width="20" height="20" />
+						</div>
+						<div class="pinglun">
+							<a href="#">
+								<img class="imgd" src="img/icon/评论.png" width="20" height="20" style="vertical-align:middle;" />
+							</a>
+							<span class="b">0</span>
+						</div>
+						<div class="guanzhu">
+							<img src="img/icon/关注.png" width="18" height="18" style="vertical-align:middle;" />
+							<span class="c">关注</span>
+						</div>
+					</div>
+					<div class="uuu">
+						<div class="comments">
+							
+						</div>
+						<div class="liuyan">
+							<input  placeholder="输入你的评价" class="comment" name="comment"/>
+							<input type="button" data-role="none"  class="ak" value="清空"/>
+							<input type="button" data-role="none" class="ak yy"  value="发表留言"/>
+							<input type="button" data-role="none" class="ak hh"  value="收起"/>
+						</div>
+					</div>
+					
+				</div>
+
+
+				<div class="content">
+					<div class="top">
+						<div class="user">
+							<img src="img/视觉中国用户头像/VCG21gic20089032.jpg" width="30" height="30" style="border-radius: 50%;" />
+						</div>
+						<div class="name">
+							<p class="username">勇闯天涯</p>
+							<p class="time">2019/6/5 19:08</p>
+						</div>
+					</div>
+					<div class="kk">
+						<h4>采桑子·十年前是尊前客</h4>
+						<div class="contson">
+							<p>
+								十年前是尊前客，月白风清，忧患凋零。老去光阴速可惊。
+								鬓华虽改心无改，试把金觥。旧曲重听。犹似当年醉里声。
+							</p>
+						</div>
+					</div>
+					<div class="img">
+						<img src="img/视觉中国风景图/VCG41560336195.jpg" />
+					</div>
+					<div class="tools">
+						<div class="shoucang">
+							<img src="img/收藏.png" width="20" height="20" />
+						</div>
+						<div class="pinglun">
+							<a href="#">
+								<img class="imgd" src="img/icon/评论.png" width="20" height="20" style="vertical-align:middle;" />
+							</a>
+							<span class="b">0</span>
+						</div>
+						<div class="guanzhu">
+							<img src="img/icon/关注.png" width="18" height="18" style="vertical-align:middle;" />
+							<span class="c">关注</span>
+						</div>
+					</div>
+					<div class="uuu">
+						<div class="comments">
+							
+						</div>
+						<div class="liuyan">
+							<input  placeholder="输入你的评价" class="comment" name="comment"/>
+							<input type="button" data-role="none"  class="ak tt" value="清空"/>
+							<input type="button" data-role="none" class="ak yy"  value="发表留言"/>
+							<input type="button" data-role="none" class="ak hh"  value="收起"/>
+						</div>
+					</div>
+				</div>
+
+				<div class="content">
+					<div class="top">
+						<div class="user">
+							<img src="img/视觉中国用户头像/VCG211127467260.jpg" width="30" height="30" style="border-radius: 50%;" />
+						</div>
+						<div class="name">
+							<p class="username">清秋云韵归</p>
+							<p class="time">2018/5/4 09:38</p>
+						</div>
+					</div>
+					<div class="kk">
+						<h4>鸣雁行</h4>
+						<div class="contson">
+							<p>
+								胡雁鸣，辞燕山，昨发委羽朝度关。
+								衔芦枝，南飞散落天地间，连行接翼往复还。
+							</p>
+						</div>
+					</div>
+					<div class="img">
+						<img src="img/视觉中国风景图/VCG41688057449.jpg" />
+					</div>
+					<div class="tools">
+						<div class="shoucang">
+							<img src="img/收藏.png" width="20" height="20" />
+						</div>
+						<div class="pinglun">
+							<a href="#">
+								<img  class="imgd" src="img/icon/评论.png" width="20" height="20" style="vertical-align:middle;"/>
+							</a>
+							<span class="b">0</span>
+						</div>
+						<div class="guanzhu">
+							<img src="img/icon/关注.png" width="18" height="18" style="vertical-align:middle;" />
+							<span class="c">关注</span>
+						</div>
+					</div>
+					<div class="uuu">
+						<div class="comments">
+							
+						</div>
+						<div class="liuyan">
+							<input  placeholder="输入你的评价" class="comment" name="comment"/>
+							<input type="button" data-role="none"  class="ak" value="清空"/>
+							<input type="button" data-role="none" class="ak yy"  value="发表留言"/>
+							<input type="button" data-role="none" class="ak hh"  value="收起"/>
+						</div>
+					</div>
+				</div>
+				
+				<div data-role="footer" data-position="fixed" data-tap-toggle="false">
+					<div data-role="navbar" data-iconpos="right">
+						<ul>
+							<li>
+								<a href="home.html" data-ajax="false" class="ui-btn ui-icon-home ui-btn-icon-top">古诗文</a>
+							</li>
+							<li>
+								<a href="video.html" data-ajax="false" class="ui-btn ui-icon-home ui-btn-icon-top">视频</a>
+							</li>
+							<li>
+								<a href="index.html" data-ajax="false" rel="external" class="ui-btn ui-icon-mail ui-btn-icon-top">作者</a>
+							</li>
+							<li>
+								<a href="PoetryCircle.html" data-ajax="false" class="ui-icon-star ui-btn-icon-top  ui-btn-active">诗友圈</a>
+							</li>
+							<li>
+								<a href="person.html" data-ajax="false" class="ui-icon-user ui-btn-icon-top">我的</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="chuangzuo">
+					<!-- <div class="sk">
+						<div class="gg">
+							<p>标题</p>
+							<span>132</span>
+						</div>
+						<div class="yy">
+							<p>收藏时间</p>
+							<span>132</span>
+						</div>
+					</div> -->
+				</div>
+			</div>
+
+		</div>
+		<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://cdn.bootcss.com/Swiper/4.0.6/js/swiper.min.js"></script>
+		<script>
+			$(function() {
+				var swiper = new Swiper('.swiper-container', {
+					spaceBetween: 20,
+					slidesPerView: 'auto',
+					freeMode: true
+				});
+			})
+			$(".chuangzuo").hide();
+			var focus = [];
+			var focus1 = JSON.parse(localStorage.getItem("focus"));
+			focus = focus1;
+			if( focus==null){
+				focus = [];
+			}
+			$(".c").click(function(){
+				var title = $(this).parent().parent().parent().find('h4').text();
+				var text = $(this).text();
+				if(text=='关注'){
+					alert("关注成功");
+					$(this).text("取消关注");
+					focus.splice(0,0,title);
+					localStorage.setItem('focus',JSON.stringify(focus));
+				}else{
+					alert("取消关注成功");
+					$(this).text("关注");
+					for(var i=0;i<focus.length;i++){
+						if(title==focus[i]){
+							focus.splice(i,1);
+						}
+					}
+					localStorage.setItem('focus',JSON.stringify(focus));
+				}
+			});
+			var username = localStorage.getItem("user");
+			var title = JSON.parse(localStorage.getItem("title"));
+			var content = JSON.parse(localStorage.getItem("content"));
+			var time = JSON.parse(localStorage.getItem("time"));
+			if(title!=null){
+				for (var i = title.length-1; i >= 0; i--) {
+					var html = '<div class="content">' +
+						'<div class="top">' +
+						'<div class="user">' +
+						'<img src="img/视觉中国用户头像/VCG21gic20089032.jpg" width="30" height="30" style="border-radius: 50%;"/>' +
+						'</div>' +
+						'<div class="name">' +
+						'<p class="username">'+username+'</p>' +
+						'<p class="time">'+time[i]+'</p>' +
+						'</div>' +
+						'</div>' +
+						'<div class="kk">' +
+						'<h4>' + title[i] + '</h4>' +
+						'<div class="contson">' +
+						'<p>' + content[i]+'</p></div></div><div class="img"><img src="img/视觉中国风景图/VCG41560336195.jpg"/></div>' +
+						'<div class="tools"><div class="shoucang"><img src="img/收藏.png"  width="20" height="20" /></div><div class="pinglun"><a href="#"><img class="imgd" src="img/icon/评论.png" width="20" height="20" style="vertical-align:middle;"/></a><span class="b">0</span>' +
+						'</div><div class="guanzhu"><img src="img/icon/关注.png" width="18" height="18" style="vertical-align:middle;"/><span class="c">关注</span></div></div>'+
+						'<div class="uuu">'+
+							'<div class="comments"></div><div class="liuyan"><input  placeholder="输入你的评价" class="comment" name="comment"/><input type="button" data-role="none"  class="ak" value="清空"/>'+
+							'<input type="button" data-role="none" class="ak yy"  value="发表留言"/>'+
+								'<input type="button" data-role="none" class="ak hh"  value="收起"/>'+
+							'</div></div></div>';
+					$("#ppp").prepend(html);
+				}
+			}
+			$(".uuu").hide();
+			$("#q2").click(function(){
+				$("#q1").css("color","#3388cc");
+				$("#q2").css("color","red");
+				$(".tabScroll").hide();
+				$(".content").hide();
+				$(".chuangzuo").show();
+				$(".chuangzuo").empty();
+				console.log(focus);
+				for(var i = focus.length-1;i>=0;i--){
+					var k = getNowFormatDate();
+					var html = '<div class="sk">'+
+						'<div class="gg">'+
+							'<p class="un">标题</p><span>'+focus[i]+'</span></div><div class="yy"><p class="un">收藏时间</p>'+
+							'<span>'+k+'</span></div></div>';
+					$(".chuangzuo").prepend(html);
+				}
+			});
+			$("#q1").click(function(){
+				$("#q1").css("color","red");
+				$("#q2").css("color","#3388cc");
+				$(".tabScroll").show();
+				$(".content").show();
+				$(".chuangzuo").hide();
+			});
+			$(".hh").click(function(){
+				$(this).parent().parent().parent().parent().find(".uuu").hide();
+			});
+			$(".imgd").click(function(){
+				$(this).parent().parent().parent().parent().find(".uuu").show();
+			});
+			
+			$(".tt").click(function(){
+				$(this).parent().find(".comment").val('');
+			});
+			
+			$(".yy").click(function(){
+				var comment = $(this).parent().find(".comment").val();
+				if(comment==null||comment==''){
+					alert("留言不能为空");
+				}else{
+					var html = '<p>'+username+":"+comment+'</p>';
+					$(this).parent().parent().find(".comments").append(html);
+					$(this).parent().find(".comment").val('');
+					var b = $(this).parent().parent().parent().find(".b").text();
+					b++;
+					$(this).parent().parent().parent().find(".b").text(b);
+				}
+			});
+
+			$(".te").click(function() {
+				$(".content").hide();
+				$(".swiper-slide").css('border-bottom', 'none');
+				$(".swiper-slide").css('color', 'black');
+				$(this).css('border-bottom', '1.5px solid red');
+				$(this).css('color', 'red');
+			});
+			$("#yuanchuang").click(function() {
+				$(".content").show();
+				$(".swiper-slide").css('border-bottom', 'none');
+				$(".swiper-slide").css('color', 'black');
+				$(this).css('border-bottom', '1.5px solid red');
+				$(this).css('color', 'red');
+			});
+			
+			//日期格式转换yyyy-MM-dd HH:MM:SS
+			function getNowFormatDate() {
+			    var date = new Date();
+			    var seperator1 = "-";
+			    var seperator2 = ":";
+			    var month = date.getMonth() + 1;
+			    var strDate = date.getDate();
+			    if (month >= 1 && month <= 9) {
+			        month = "0" + month;
+			    }
+			    if (strDate >= 0 && strDate <= 9) {
+			        strDate = "0" + strDate;
+			    }
+			    var currentdate = date.getFullYear() + seperator1 + month + seperator1 + strDate
+			            + " " + date.getHours() + seperator2 + date.getMinutes()
+			            + seperator2 + date.getSeconds();
+			    return currentdate;
+			}
+		</script>
+	</body>
+</html>

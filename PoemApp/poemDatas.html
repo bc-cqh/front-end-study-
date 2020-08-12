@@ -1,0 +1,205 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script src="js/jquery-1.11.1/jquery.js"></script>
+		<link rel="stylesheet" href="js/jquery.mobile-1.4.5/jquery.mobile-1.4.5.css" />
+		<script src="js/jquery.mobile-1.4.5/jquery.mobile-1.4.5.js"></script>
+		<!-- 引入 echarts.js -->
+		<script src="https://cdn.staticfile.org/echarts/4.3.0/echarts.min.js"></script>
+
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			html,
+			body {
+				height: 100%;
+				font-weight: bolder;
+			}
+			#main1{
+				margin-top: 15%;
+			}
+			/* Page and overlay */
+			.ui-overlay-a,
+			.ui-page-theme-a,
+			.ui-page-theme-a .ui-panel-wrapper {
+				background-color: 			#f9f9f9 /*{a-page-background-color}*/;
+				border-color:	 		#bbb /*{a-page-border}*/;
+				color: 					#333 /*{a-page-color}*/;
+				text-shadow: none;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<div data-role="page">
+			<div data-role="header">
+				<a href="#" class="ui-btn" data-rel="back">返回</a>
+				<h1>诗词数据分析</h1>
+			</div>
+		</div>
+		<!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+		<div id="main1" style="width: 100%;height: 600px;"></div>
+		<!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+		<div id="main2" style="width: 100%;height: 300px;"></div>
+		<script>
+			// 基于准备好的dom，初始化echarts实例
+			var myChart = echarts.init(document.getElementById("main1"));
+			// 指定图表的配置项和数据
+			var option = {
+				// 标题
+				title: {
+					text: '作者诗词统计',
+					left: 'left',
+
+				},
+				// 工具箱
+				toolbox: {
+					show: true,
+					feature: {
+						saveAsImage: {
+							show: true
+						},
+						restore: {
+							show: true
+						},
+						dataView: {
+							show: true
+						},
+
+						magicType: {
+							type: ['line', 'bar']
+						}
+
+					}
+				},
+				tooltip: {
+					trigger: 'axis'
+				},
+				// 图例
+				legend: {
+					data: ['数量']
+				},
+				// x轴
+				xAxis: {
+					data: ["李白", "曹操", "白居易", "杜甫", "李清照", "屈原"]
+				},
+				yAxis: {},
+				// 数据
+				series: [{
+					name: '数量',
+					type: 'bar',
+					data: [5, 20, 36, 10, 10, 20],
+					markPoint: {
+						data: [{
+								type: 'max',
+								name: '最大值'
+							},
+							{
+								type: 'min',
+								name: '最小值',
+								symbol: 'arrow'
+							}
+						]
+					},
+					markLine: {
+						data: [{
+							type: 'average',
+							name: '平均值'
+						}]
+					}
+				}]
+			};
+			// 使用刚指定的配置项和数据显示图表。
+			myChart.setOption(option);
+
+
+			// 基于准备好的dom，初始化echarts实例
+			var myChart = echarts.init(document.getElementById("main2"));
+			var option = {
+				//标题　　
+				title: {
+					text: '朝代诗歌统计',
+					x: 'center'
+				},
+				// 工具箱
+				toolbox: {
+					show: true,
+					feature: {
+						saveAsImage: {
+							show: true
+						},
+						restore: {
+							show: true
+						},
+						dataView: {
+							show: true
+						},
+					}
+				},
+				//提示框，鼠标悬浮交互时的信息提示
+				tooltip: {
+					trigger: 'item',
+					formatter: "{a} <br/>{b} : {c} ({d}%)"
+				},
+				//图例，每个图表最多仅有一个图例
+				legend: {
+					orient: 'vertical',
+					left: 'left',
+					data: ['先秦', '两汉', '唐代', '宋代', '明代', '清代']
+				},
+				// 系列列表,每个系列通过 type 决定自己的图表类型
+				series: [{
+					name: '访问',
+					type: 'pie',
+					radius: '62%',
+					center: ['50%', '65%'],
+					minAngle: '15',
+					data: [{
+							name: "先秦",
+							value: 4
+						},
+						{
+							name: "两汉",
+							value: 7
+						},
+						{
+							name: "唐代",
+							value: 3
+						},
+						{
+							name: "宋代",
+							value: 1
+						},
+						{
+							name: "明代",
+							value: 3
+						},
+						{
+							name: "清代",
+							value: 1
+						},
+					],
+					/* itemStyle: {
+					    normal:{
+					        label:{
+					            show:true,
+					            formatter: "{b} :\n  {c} \n ({d}%)",
+					            position:"inner"
+					        }
+					    }
+					} */
+				}],
+			};
+			myChart.setOption(option); // 为echarts对象加载数据
+		</script>
+	</body>
+
+</html>

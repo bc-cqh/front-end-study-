@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>视频学习</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="js/jquery.mobile-1.4.5/jquery.mobile-1.4.5.css" />
+		<link href="https://cdn.bootcss.com/Swiper/4.0.6/css/swiper.min.css" rel="stylesheet">
+		<script src="js/jquery-1.11.1/jquery.js"></script>
+		<script src="js/jquery.mobile-1.4.5/jquery.mobile-1.4.5.js"></script>
+		<style type="text/css">
+			.swiper-slide {
+				width: auto !important;
+				text-align: center;
+				margin-left: 5%;
+			}
+			.tabScroll {
+				text-align: center;
+				height: 35px;
+				background-color: white;
+				border-bottom: 1px solid #CCCCCC;
+				padding: 0 10px;
+				line-height: 35px;
+				font-family: "微软雅黑"
+			}
+			#a {
+				border-bottom: 2px solid red;
+			}
+			.aa{
+				display: block;
+				width: 100%;
+				text-align: center;
+				margin-top: 5%;
+				margin-bottom: 3%;
+			}
+		</style>
+	</head>
+	<body>
+		<div data-role="page">
+			<div data-role="header">
+				<h1>古诗词视频学习</h1>
+			</div>
+			<!-- Swiper -->
+			<div class="tabScroll">
+				<div class="swiper-container">
+					<div class="swiper-wrapper">
+						<span class="swiper-slide" id="a" onclick="change(1)">小学古诗</span>
+						<span class="swiper-slide" id="b" onclick="change(2)">唐诗三百</span>
+						<span class="swiper-slide" id="c" onclick="change(3)">高中古诗</span>
+						<span class="swiper-slide" id="d"onclick="change(4)">宋词精选</span>
+						<span class="swiper-slide" id="e" onclick="change(5)">诗经</span>
+					</div>
+				</div>
+			</div>
+			<div data-role="main" class="ui-content" id="ppp">
+				<div id="xiaoxue">
+					<span class="aa">将进酒——唐·李白</span>
+					<video src="video/将进酒.mp4" controls="controls" width="100%"></video>
+					<span class="aa">小池——唐·杨万里</span>
+					<video src="video/小池-杨万里.mp4" controls="controls" width="100%"></video>
+					<span class="aa">静夜诗——唐·李白</span>
+					<video src="video/123.mp4" controls="controls" width="100%"></video>
+				</div>
+				<div id="tangshi">
+					<span class="aa">长恨歌——唐·白居易</span>
+					<video src="video/将进酒.mp4" controls="controls" width="100%"></video>
+					<span class="aa">春望——唐·杜甫</span>
+					<video src="video/小池-杨万里.mp4" controls="controls" width="100%"></video>
+				</div>
+				<div id="gaozhong">
+					<span class="aa">观沧海——两汉·曹操</span>
+					<video src="video/将进酒.mp4" controls="controls" width="100%"></video>
+					<span class="aa">野望——隋代·杨广</span>
+					<video src="video/小池-杨万里.mp4" controls="controls" width="100%"></video>
+				</div>
+				<div id="songci">
+					<span class="aa">东坡易传——宋·苏轼</span>
+					<video src="video/将进酒.mp4" controls="controls" width="100%"></video>
+					<span class="aa">易安词——宋·李清照</span>
+					<video src="video/小池-杨万里.mp4" controls="controls" width="100%"></video>
+				</div>
+				<div id="shijing">
+					<span class="aa">《诗经》——先秦·屈原</span>
+					<video src="video/将进酒.mp4" controls="controls" width="100%"></video>
+					<span class="aa">智子疑邻——先秦·韩非</span>
+					<video src="video/小池-杨万里.mp4" controls="controls" width="100%"></video>
+				</div>
+			</div>
+			<div data-role="footer" data-position="fixed" data-tap-toggle="false">
+				<div data-role="navbar" data-iconpos="right">
+					<ul>
+						<li>
+							<a href="home.html" data-ajax="false" class="ui-btn ui-icon-home ui-btn-icon-top">古诗文</a>
+						</li>
+						<li>
+							<a href="video.html" data-ajax="false" class="ui-btn ui-icon-home ui-btn-icon-top  ui-btn-active">视频</a>
+						</li>
+						<li>
+							<a href="index.html" data-ajax="false" rel="external" class="ui-btn ui-icon-mail ui-btn-icon-top">作者</a>
+						</li>
+						<li>
+							<a href="PoetryCircle.html" data-ajax="false" class="ui-icon-star ui-btn-icon-top">诗友圈</a>
+						</li>
+						<li>
+							<a href="person.html" data-ajax="false" class="ui-icon-user ui-btn-icon-top">我的</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		
+		</div>
+		<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://cdn.bootcss.com/Swiper/4.0.6/js/swiper.min.js"></script>
+		<script>
+			$(function() {
+				var swiper = new Swiper('.swiper-container', {
+					spaceBetween: 20,
+					slidesPerView: 'auto',
+					freeMode: true
+				});
+			})
+			$("#tangshi").hide();
+			$("#gaozhong").hide();
+			$("#songci").hide();
+			$("#shijing").hide();
+			
+			
+			function change(k){
+				$("#ppp").children().hide();
+				$(".swiper-slide").css("border-bottom",'none');
+				if(k==1){
+					$("#xiaoxue").show();
+					$("#a").css("border-bottom","2px solid red");
+				}else if(k==2){
+					$("#tangshi").show();
+					$("#b").css("border-bottom","2px solid red");
+				}else if(k==3){
+					$("#gaozhong").show();
+					$("#c").css("border-bottom","2px solid red");
+				}else if(k==4){
+					$("#songci").show();
+					$("#d").css("border-bottom","2px solid red");
+				}else if(k==5){
+					$("#shijing").show();
+					$("#e").css("border-bottom","2px solid red");
+				}
+			}
+			
+		</script>
+	</body>
+</html>

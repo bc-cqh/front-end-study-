@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>诗友圈</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="js/jquery.mobile-1.4.5/jquery.mobile-1.4.5.css" />
+		<link href="https://cdn.bootcss.com/Swiper/4.0.6/css/swiper.min.css" rel="stylesheet">
+		<script src="js/jquery-1.11.1/jquery.js"></script>
+		<script src="js/jquery.mobile-1.4.5/jquery.mobile-1.4.5.js"></script>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+				border: none;
+				touch-action: none;
+			}
+
+			a {
+				text-decoration: none;
+			}
+
+			.header {
+				width: 100%;
+				height: 50px;
+			}
+
+			.home {
+				width: 10%;
+				float: left;
+			}
+
+			.title {
+				height: 50px;
+				line-height: 50px;
+				float: left;
+				width: 30%;
+				margin-left: 25%;
+				text-align: center;
+				font-size: 20px;
+			}
+
+			.create {
+				width: 10%;
+				float: right;
+				margin-top: 10px;
+			}
+
+			.swiper-slide {
+				width: auto !important;
+			}
+
+			.tabScroll {
+				height: 35px;
+				background-color: white;
+				border-bottom: 1px solid #CCCCCC;
+				padding: 0 10px;
+				line-height: 35px;
+				font-family: "微软雅黑"
+			}
+
+			#yuanchuang {
+				background-color: #3388cc;
+			}
+
+			.content {
+				border-top: 1px solid gray;
+			}
+
+			.top {
+				margin-top: 10px;
+				width: 100%;
+				float: left;
+			}
+
+			.user {
+				float: left;
+			}
+
+			.name {
+				margin-left: 10px;
+				float: left;
+			}
+
+			.username {
+				font-size: 15px;
+			}
+
+			.time {
+				font-size: 10px;
+				line-height: 20px;
+			}
+
+			.contson {
+				margin-top: 5px;
+				line-height: 25px;
+			}
+
+			.img {
+				margin-top: 10px;
+			}
+
+			.img img {
+				width: 100%;
+
+			}
+
+			.tools {
+				margin-top: 5px;
+				height: 33px;
+			}
+
+			.tools .shoucang {
+				float: left;
+			}
+
+			.tools .pinglun {
+				float: left;
+				margin-left: 20px;
+			}
+
+			.tools .guanzhu {
+				margin-left: 20px;
+				float: left;
+			}
+			.ak{
+				background-color: lightblue;
+				width: 80px;
+				height: 30px;
+				border-radius: 15%;
+			}
+		</style>
+	</head>
+	<body>
+		<div data-role="page">
+			<div data-role="header">
+				<a href="#" class="ui-btn ui-corner-all" data-rel="back">返回</a>
+				<h1>我的文章</h1>
+			</div>
+			<div data-role="main" class="ui-content" id="ppp">
+				
+			</div>
+
+		</div>
+		
+		<script>
+			
+			var username = localStorage.getItem("user");
+			var title = JSON.parse(localStorage.getItem("title"));
+			var content = JSON.parse(localStorage.getItem("content"));
+			var time = JSON.parse(localStorage.getItem("time"));
+			if(title!=null){
+				for (var i = title.length-1; i >= 0; i--) {
+					var html = '<div class="content">' +
+						'<div class="top">' +
+						'<div class="user">' +
+						'<img src="img/视觉中国用户头像/VCG21gic20089032.jpg" width="30" height="30" style="border-radius: 50%;"/>' +
+						'</div>' +
+						'<div class="name">' +
+						'<p class="username">'+username+'</p>' +
+						'<p class="time">'+time[i]+'</p>' +
+						'</div>' +
+						'</div>' +
+						'<div class="kk">' +
+						'<h4>' + title[i] + '</h4>' +
+						'<div class="contson">' +
+						'<p>' + content[i]+'</p></div></div><div class="img"><img src="img/视觉中国风景图/VCG41560336195.jpg"/></div>' +
+						'<div class="tools"><div class="pinglun"><a href="#"><img class="imgd" src="img/icon/评论.png" width="20" height="20" style="vertical-align:middle;"/></a><span class="b">0</span>' +
+						'</div></div>'+
+						'<div class="uuu">'+
+							'<div class="comments"></div><div class="liuyan"><input  placeholder="输入你的评价" class="comment" name="comment"/><input type="button" data-role="none"  class="ak" value="清空"/>'+
+							'<input type="button" data-role="none" class="ak yy"  value="发表留言"/>'+
+								'<input type="button" data-role="none" class="ak hh"  value="收起"/>'+
+							'</div></div></div>';
+					$("#ppp").prepend(html);
+				}
+			}
+			
+			$(".uuu").hide();
+
+			$(".hh").click(function(){
+				$(this).parent().parent().parent().parent().find(".uuu").hide();
+			});
+			$(".imgd").click(function(){
+				$(this).parent().parent().parent().parent().find(".uuu").show();
+			});
+			
+			$(".tt").click(function(){
+				$(this).parent().find(".comment").val('');
+			});
+			
+			$(".yy").click(function(){
+				var comment = $(this).parent().find(".comment").val();
+				if(comment==null||comment==''){
+					alert("留言不能为空");
+				}else{
+					var html = '<p>'+username+":"+comment+'</p>';
+					$(this).parent().parent().find(".comments").append(html);
+					$(this).parent().find(".comment").val('');
+					var b = $(this).parent().parent().parent().find(".b").text();
+					b++;
+					$(this).parent().parent().parent().find(".b").text(b);
+				}
+			});
+
+			$(".te").click(function() {
+				$(".content").hide();
+				$(".swiper-slide").css('background', 'none');
+				$(this).css('background-color', ' #3388cc');
+
+			});
+			$("#yuanchuang").click(function() {
+				$(".content").show();
+				$(".swiper-slide").css('background', 'none');
+				$(this).css('background-color', ' #3388cc');
+			});
+		</script>
+	</body>
+</html>

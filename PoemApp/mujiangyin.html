@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<script src="js/jquery-1.11.1/jquery.js"></script>
+		<link rel="stylesheet" href="js/jquery.mobile-1.4.5/jquery.mobile-1.4.5.css" />
+		<script src="js/jquery.mobile-1.4.5/jquery.mobile-1.4.5.js"></script>
+		<title>诗词详情</title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			html,
+			body {
+				height: 100%
+			}
+			#biaoti{
+				width: 100%;
+				text-align: center;
+				margin-bottom: 5%;
+			}
+			#id1{
+				padding-top: 2%;
+				font-weight: bolder;
+			}
+			#id2{
+				padding-top: 5%;
+				font-family: "Helvetica";
+				color: gray;
+			}
+			#id3{
+				padding-top: 5%;
+				line-height: 150%;
+				font-family: "KAITI";
+				font-size: 18px;
+				padding-left: 10px;
+			}
+			.a{
+				width: 100%;
+				height: 10px;
+				background-color: #F6EBCD;
+			}
+			.b{
+				width: 100%;
+				height: 30px;
+			}
+			.c{
+				list-style: none;
+				width: 100%;
+			}
+			.c li{
+				width: 33.33%;
+				float: left;
+				line-height: 30px;
+				text-align: center;
+			}
+			#l1{
+				color: red;
+				border-bottom: 1px solid red;
+			}
+			.c li:hover{
+				color: red;
+				border-bottom: 1px solid red;
+			}
+			.kk{
+				padding-left: 2%;
+				font-family: "KAITI";
+				line-height: 150%;
+			}
+			#gg{
+				position: absolute;
+				top: 0;
+				left: 2%;
+			}
+		</style>
+	</head>
+
+	<body>
+		<a href="#" data-rel="back" id="gg" class="ui-btn ui-corner-all ui-icon-carat-l ui-btn-icon-notext">返回</a>
+		<div>
+			<img src="img/诗人头像/VCG211269685923.jpg" width="100%"/>
+		</div>
+		<div id="biaoti">
+			<h3 id="id1">暮江吟</h3>
+			<img id="play" src="img/播放.png" width="20"/>
+			<audio id="audio" style="display: none; cursor:pointer;outline:none; float:left; margin-left:20px; width:80%;height: 54px;" src="audio/暮江吟.mp3" controls="controls"></audio>
+			<p id="id2">唐代·白居易</p>
+			<p id="id3">
+				一道残阳铺水中，半江瑟瑟半江红。
+				<br>
+				可怜九月初三夜，露似真珠月似弓。
+			</p>
+		</div>
+		<div class="a"></div>
+		<div class="b">
+			<ul class="c">
+				<li id="l1">翻译</li>
+				<li id="l2">鉴赏</li>
+				<li id="l3">作者</li>
+			</ul>
+		</div>
+		<div class="a"></div>
+		<div class="kk" id="k1">
+			<h3>译文及注释</h3>
+			<h4>译文：</h4>
+		
+			<p>快要落山的夕阳，霞光柔和的铺在江水上，江水一半碧绿，一半艳红。</p>
+			<p>最可爱的是那九月初三之夜，露珠似颗颗珍珠，朗朗新月形如弯弓。</p>
+			<br />
+			<h4>注释：</h4>
+			<p>暮江吟：黄昏时分在江边所作的诗。吟，古代诗歌的一种形式。</p>
+			<p>残阳：快落山的太阳的光。也指晚霞。</p>
+			<p>瑟瑟：原意为碧色珍宝，此处指碧绿色 。</p>
+			<p>可怜：可爱。</p>
+			<p>九月初三：农历九月初三的时候。</p>
+			<p>月似弓：农历九月初三，上弦月，其弯如弓。</p>
+			
+		</div>
+		<div class="kk" id="k2">
+			<h3>鉴赏：</h3>
+			<p>
+				白居易纯粹写景的作品很少，这是一首颇为人称道的小诗。
+				全诗构思妙绝之处，在于摄取了两幅幽美的自然界的画面，加以组接。
+				一幅是夕阳西沉、晚霞映江的绚丽景象，一幅是弯月初升，露珠晶莹的朦胧夜色。
+				<br />
+				两者分开看各具佳景，合起来读更显妙境，诗人又在诗句中妥帖地加入比喻的写法，
+				使景色倍显生动。由于这首诗渗透了诗人自愿远离朝廷后轻松愉悦的解放情绪和个性色彩，
+				因而又使全诗成了诗人特定境遇下审美心理功能的艺术载体。
+			
+			</p>
+		</div>
+		<div class="kk" id="k3">
+			<img src="img/诗人头像/baijuyi.jpg"  height="130"/>
+			<h3>作者介绍：</h3>
+			<p>
+				白居易（772年－846年），字乐天，号香山居士，又号醉吟先生，
+				祖籍太原，到其曾祖父时迁居下邽，生于河南新郑。
+				是唐代伟大的现实主义诗人，唐代三大诗人之一。
+				白居易与元稹共同倡导新乐府运动，世称“元白”，与刘禹锡并称“刘白”。
+				白居易的诗歌题材广泛，形式多样，语言平易通俗，有“诗魔”和“诗王”之称。
+				官至翰林学士、左赞善大夫。公元846年，白居易在洛阳逝世，葬于香山。
+				有《白氏长庆集》传世，代表诗作有《长恨歌》、《卖炭翁》、《琵琶行》等。
+			</p>
+		</div>
+	</body>
+	<script>
+		$("#k1").show();
+		$("#k2").hide();
+		$("#k3").hide();
+		$("#l1").click(function(){
+			$("#l1").css("color","red");
+			$("#l1").css("border-bottom","1px solid red");
+			$("#k1").show();
+			$("#k2").hide();
+			$("#k3").hide();
+		});
+		$("#l2").click(function(){
+			$("#l1").css("color","black");
+			$("#l1").css("border-bottom",'none');
+			$("#k1").hide();
+			$("#k2").show();
+			$("#k3").hide();
+		});
+		$("#l3").click(function(){
+			$("#l1").css("color","black");
+			$("#l1").css("border-bottom",'none');
+			$("#k1").hide();
+			$("#k2").hide();
+			$("#k3").show();
+		});
+		
+		$("#play").click(function(){
+			var audio = document.getElementById("audio");
+			if(audio.paused){
+				audio.play();
+				$("#play").attr("src","img/播放1.png");
+			}else{
+				audio.pause();
+				$("#play").attr("src","img/播放.png");
+			}
+		});
+	</script>
+</html>

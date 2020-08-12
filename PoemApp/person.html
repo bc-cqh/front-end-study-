@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>个人中心</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="js/jquery.mobile-1.4.5/jquery.mobile-1.4.5.css" />
+		<script src="js/jquery-1.11.1/jquery.js"></script>
+		<script src="js/jquery.mobile-1.4.5/jquery.mobile-1.4.5.js"></script>
+		<style type="text/css">
+			body html {
+				font-family: Tahoma, Arial, Roboto, "Droid Sans", "Helvetica Neue", "Droid Sans Fallback", "Heiti SC", sans-self;
+			}
+
+			.ui-header {
+				border-style: none;
+			}
+
+			#personPage {
+				height: 100%;
+				background: url("img/background-image/VCG211123162761.jpg");
+				background-repeat: no-repeat;
+				background-position: center top;
+				background-size: cover;
+			}
+
+			.photo {
+				width: 100px;
+				height: 100px;
+				background-color: #30A3F8;
+				text-align: center;
+				border-radius: 50%;
+				margin-left: auto;
+				margin-right: auto;
+			}
+
+			.photo img {
+				vertical-align: middle;
+				padding: 10px;
+				;
+				width: 80%;
+				height: 80%;
+				border-radius: 50%;
+			}
+
+			.flag {
+				width: 40px;
+				height: 20px;
+				background-color: yellow;
+				text-align: center;
+				line-height: 20px;
+				border-radius: 10px;
+				margin-left: auto;
+				margin-right: auto;
+				color: red;
+				margin-top: -10px;
+			}
+
+			.p {
+				margin-top: 10px;
+				color: #65645F;
+				text-align: center;
+				font-size: 17px;
+				font-weight: bolder;
+			}
+
+			.ui-grid-a {
+				padding-top: 10px;
+				height: 60px;
+				margin-top: 20px;
+				text-align: center;
+				box-shadow: 0px 4px 7px #333333;
+			}
+			#list{
+				display: block;
+				margin-top: 80px;
+			}
+			#pp{
+				width: 30px;
+				height: 30px;
+			}
+		</style>
+	</head>
+	<body>
+		<div data-role="page" id="personPage">
+			<div data-role="header" id="header">
+				<a href="#" data-rel="back" class="ui-btn ui-corner-all ui-icon-carat-l ui-btn-icon-notext">返回</a>
+				<h1>个人中心</h1>
+				<!-- <a href="#" class=" ui-btn-icon-right ui-btn-left ui-btn ui-icon-search ui-corner-all ">搜索</a> -->
+			</div>
+			<div data-role="main" class="ui-content">
+				<div class="a">
+					<div class="photo">
+						<img src="img/userPhoto/VCG25i382593.jpg" />
+					</div>
+					<div class="flag">VIP</div>
+					<div class="p">欢迎你:<span id="username"></span></div>
+				</div>
+				<div class="ui-grid-a">
+					<div class="ui-block-a">
+						<img src="img/icon/我的积分.png" width="20" height="20" />
+						<br />
+						<span>我的积分:</span><span id="integral">12</span>
+					</div>
+					<div class="ui-block-b">
+						<img src="img/icon/等级.png" width="20" height="20" />
+						<br />
+						<span>我的等级:</span><span id="level">3</span>
+					</div>
+				</div>
+				<ul data-role="listview" data-inset="true" id="list">
+				      <li><a href="poemDatas.html" data-ajax="false" rel="external"><img src="img/icon/收藏.png" class="ui-li-icon">诗词数据</a></li>
+				      <li><a href="myArticle.html" data-ajax="false" rel="external"><img src="img/icon/文章蓝.png" class="ui-li-icon">我的文章</a></li>
+					  <li><a href="create.html" data-ajax="false" rel="external"><img src="img/icon/创作.png" class="ui-li-icon">文章创作</a></li>
+				      <li><a href="version.html" data-ajax="false" rel="external"><img src="img/icon/导航.png" class="ui-li-icon">关于</a></li>
+				      <li><a href="login.html" data-ajax="false" rel="external"><img src="img/icon/设置.png" class="ui-li-icon">退出</a></li>
+				</ul>
+			</div>
+			<div data-role="footer" data-position="fixed" data-tap-toggle="false">
+				<div data-role="navbar" data-iconpos="right">
+					<ul>
+						<li>
+							<a href="home.html" data-ajax="false" class="ui-btn ui-icon-home ui-btn-icon-top">古诗文</a>
+						</li>
+						<li>
+							<a href="video.html" data-ajax="false" class="ui-btn ui-icon-home ui-btn-icon-top">视频</a>
+						</li>
+						<li>
+							<a href="index.html" data-ajax="false" rel="external" class="ui-btn ui-icon-mail ui-btn-icon-top">作者</a>
+						</li>
+						<li>
+							<a href="PoetryCircle.html" data-ajax="false" class="ui-icon-star ui-btn-icon-top">诗友圈</a>
+						</li>
+						<li>
+							<a href="person.html" data-ajax="false" class="ui-icon-user ui-btn-icon-top ui-btn-active">我的</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<script>
+			var user = localStorage.getItem("user");
+			$("#username").text(user);
+		</script>
+	</body>
+</html>
